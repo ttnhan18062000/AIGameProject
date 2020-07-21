@@ -34,7 +34,7 @@ class NeuralNetwork:
         self.score = 0
         weightShape = []
         if network_shape is None:
-            network_shape = [56,16,8,4]
+            network_shape = [56,32,32,4]
         for i in range(len(network_shape)-1):
             weightShape.append([network_shape[i],network_shape[i+1]])
         #weightShape = [[shape[0],shape[1]],[shape[1], shape[2]],[shape[2], shape[3]]]
@@ -134,7 +134,7 @@ class NeuralNetwork:
         return output
 
     def render(self, window, vision, startPos):
-        neuralRadius = 5
+        neuralRadius = 4
         neuralRadiusFirstLayer = 3
         lineWidth = 2
         marginNeuralFirstLayer = 5

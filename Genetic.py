@@ -12,7 +12,7 @@ class GeneticAlgorithm:
                  crossover_rate=0.3, crossover_method='neuron', mutation_rate=0.7, mutation_method='weight'):
         self.networks_shape = networks_shape
         if self.networks_shape is None:  # if no shape is provided
-            self.networks_shape = [56, 16, 8, 4]  # default shape
+            self.networks_shape = [56, 32, 32, 4]  # default shape
         self.networks = networks
 
         if networks is None:  # if no networks are provided

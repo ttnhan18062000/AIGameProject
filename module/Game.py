@@ -55,9 +55,9 @@ class Snake(object):
         self.body = []
         self.body.append(body)
         self.age = 0
-        self.stomach = 500
+        self.stomach = 100
         self.isAlive = True
-        self.headDir = 'up'
+        self.headDir = ''
     def display(self, snakeBoard):
         for segment in self.body:
             segment.display(snakeBoard)
@@ -82,6 +82,7 @@ class Snake(object):
             self.body[i].lastDir = self.body[i-1].dir
 
     def growth(self, snakeBoard):
+        self.stomach = 100
         tailDir = self.body[len(self.body)-1].lastDir
         newPos = [self.body[len(self.body)-1].pos[0],self.body[len(self.body)-1].pos[1]]
         if tailDir == 'up':
@@ -124,7 +125,6 @@ class Controller(object):
             return True
         return False
     def snakeEatApple(self):
-        self.snake.stomach = 500
         self.snake.growth(self.snakeBoard)
         self.generateApple()
     def initSnake(self):
@@ -161,7 +161,7 @@ class Controller(object):
         self.score = self.fitness()
         return self.fitness()
     def fitness(self):
-        return len(self.snake.body)*501 + self.snake.age
+        return (len(self.snake.body)-1)*1000 + self.snake.age
     def update(self, network):
         if self.snake.isAlive == False:
             return False
@@ -177,16 +177,16 @@ class Controller(object):
         self.snakeVision = np.concatenate((np.delete(vision.reshape(1, vision.size), 24, axis=1), appleVision), axis=1)
         movement = network.filterOutput(network.forward(self.snakeVision))
         for i in range(movement.size):
-            if int(movement[i]) == 1 and i == 0:
+            if int(movement[i]) == 1 and i == 0 and self.snake.headDir != 'down':
                 self.snake.headDir = 'up'
                 break
-            elif int(movement[i]) == 1 and i == 1:
+            elif int(movement[i]) == 1 and i == 1 and self.snake.headDir != 'up':
                 self.snake.headDir = 'down'
                 break
-            elif int(movement[i]) == 1 and i == 2:
+            elif int(movement[i]) == 1 and i == 2 and self.snake.headDir != 'right':
                 self.snake.headDir = 'left'
                 break
-            else:
+            elif int(movement[i]) == 1 and i == 3 and self.snake.headDir != 'left':
                 self.snake.headDir = 'right'
         self.snake.move(self.snakeBoard)
         if self.isEatApple():
@@ -340,6 +340,6 @@ windowWidth = 1300
 while 1:
     game = Controller()
     network1 = NeuralNetwork()
-    network1.load('E:/Tai_lieu/AIGameProject/AIGameProject/SavedNetwork/gen_6_weights.txt','E:/Tai_lieu/AIGameProject/AIGameProject/SavedNetwork/gen_6_biases.txt')
+    network1.load('E:/Tai_lieu/AIGameProject/AIGameProject/SavedNetwork/gen_26_weights.txt','E:/Tai_lieu/AIGameProject/AIGameProject/SavedNetwork/gen_26_biases.txt')
     game.isShowed = True
     game.start(network = network1)
