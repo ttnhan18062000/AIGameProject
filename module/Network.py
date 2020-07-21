@@ -4,6 +4,7 @@ import pygame
 import math
 import time
 from pygame import gfxdraw
+import json
 
 #shape = (56,16,8,4) # 57x12, 17x8, 9x4
 numLayer = 4
@@ -15,17 +16,29 @@ def sigmoid(z):
     """
     return 1.0 / (1.0 + np.exp(-z))
 
+class NumpyEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, np.integer):
+            return int(obj)
+        elif isinstance(obj, np.floating):
+            return float(obj)
+        elif isinstance(obj, np.ndarray):
+            return obj.tolist()
+        return json.JSONEncoder.default(self, obj)
+
 class NeuralNetwork:
-    def __init__(self, network_shape):
+    def __init__(self, network_shape = None):
         #self.shape = shape
         self.weights = []
         self.biases = []
         self.score = 0
         weightShape = []
+        if network_shape is None:
+            network_shape = [56,16,8,4]
         for i in range(len(network_shape)-1):
             weightShape.append([network_shape[i],network_shape[i+1]])
         #weightShape = [[shape[0],shape[1]],[shape[1], shape[2]],[shape[2], shape[3]]]
-        for i in range(numLayer-1):
+        for i in range(numLayer - 1):
             self.weights.append(np.random.randn(weightShape[i][0],weightShape[i][1]))
         for i in range(numLayer - 1):
             self.biases.append(np.random.randn(1,weightShape[i][1]))
@@ -39,13 +52,76 @@ class NeuralNetwork:
         #print(input)
         return input.ravel()
 
-    def save(self):
-        np.save('E:/Tai_lieu/ReinforcementLearningProject/Snake/saved_weights', self.weights)
-        np.save('E:/Tai_lieu/ReinforcementLearningProject/Snake/saved_biases', self.biases)
+    def save(self, name = None):
+        """
+        if name is None:
+            np.save('E:/Tai_lieu/AIGameProject/AIGameProject/SavedNetwork/saved_weights_' + str(self.score),
+                    self.weights)
+            np.save('E:/Tai_lieu/AIGameProject/AIGameProject/SavedNetwork/saved_biases_' + str(self.score),
+                    self.biases)
+        else:
+            np.save('E:/Tai_lieu/AIGameProject/AIGameProject/SavedNetwork/' + name + '_weights'
+                    , self.weights)
+            np.save('E:/Tai_lieu/AIGameProject/AIGameProject/SavedNetwork/' + name + '_biases'
+                    , self.biases)
+        """
+        dumped = json.dumps(self.weights, cls=NumpyEncoder)
+        with open('E:/Tai_lieu/AIGameProject/AIGameProject/SavedNetwork/' + name + '_weights.txt', 'w') as f:
+            json.dump(dumped, f)
+        dumped = json.dumps(self.biases, cls=NumpyEncoder)
+        with open('E:/Tai_lieu/AIGameProject/AIGameProject/SavedNetwork/' + name + '_biases.txt', 'w') as f:
+            json.dump(dumped, f)
+        """
+        with open('E:/Tai_lieu/AIGameProject/AIGameProject/SavedNetwork/' + name + '_weights.txt','w') as f:
+            for layer in self.weights:
+                f.write('[ ')
+                for row in layer:
+                    f.write('[ ')
+                    for cell in row:
+                        f.write(str(cell) + ' ')
+                    f.write('] ')
+                f.write(']')
+        with open('E:/Tai_lieu/AIGameProject/AIGameProject/SavedNetwork/' + name + '_biases.txt','w') as f:
+            for layer in self.biases:
+                f.write('[ ')
+                for row in layer:
+                    f.write('[ ')
+                    for cell in row:
+                        f.write(str(cell) + ' ')
+                    f.write('] ')
+                f.write(']')
+        """
+    def load(self, filename_weights, filename_biases):
+        with open(filename_weights) as json_file:
+            data = json.load(json_file)
+            data = data.split('[[[')[1]
+            data = data.split(']]]')[0]
+            data1 = data.split(']], [[')
+            self.weights = []
+            for d1 in data1:
+                data2 = d1.split('], [')
+                layer = np.empty((len(data2), len(data2[0].split(', '))))
+                for i in range(len(data2)):
+                    data3 = data2[i].split(', ')
+                    for j in range(len(data3)):
+                        layer[i][j] = float(data3[j])
+                self.weights.append(layer)
 
-    def load(self):
-        self.weights = np.load('E:/Tai_lieu/ReinforcementLearningProject/Snake/saved_weights')
-        self.biases = np.load('E:/Tai_lieu/ReinforcementLearningProject/Snake/saved_biases')
+        with open(filename_biases) as json_file:
+            data = json.load(json_file)
+            data = data.split('[[[')[1]
+            data = data.split(']]]')[0]
+            data1 = data.split(']], [[')
+            self.biases = []
+            for d1 in data1:
+                data2 = d1.split('], [')
+                layer = np.empty((len(data2), len(data2[0].split(', '))))
+                for i in range(len(data2)):
+                    data3 = data2[i].split(', ')
+                    for j in range(len(data3)):
+                        layer[i][j] = float(data3[j])
+                self.biases.append(layer)
+
 
     def filterOutput(self, output):
         maxVal = np.max(output)

@@ -2,7 +2,7 @@ import pygame
 import numpy as np
 import random
 import math
-from Snake.module.Network import NeuralNetwork
+from module.Network import NeuralNetwork
 
 
 def getAngle(a, b, c):
@@ -99,19 +99,16 @@ class Snake(object):
         pass
 
 class Controller(object):
-    def __init__(self, network = False):
+    def __init__(self):
         self.applePos = []
         self.applePos.append(0)
         self.applePos.append(0)
         self.snakeBoard = np.zeros((numCol + 1, numRow + 1))
         self.snake = self.initSnake()
-        if network:
-            self.network = network
-        else:
-            self.network = NeuralNetwork()
         self.isShowed = False
         self.isToggled = False
         self.snakeVision = ''
+        self.score = 0
     def generateApple(self):
         x = random.randint(0, numCol - 1)
         y = random.randint(0, numRow - 1)
@@ -134,12 +131,16 @@ class Controller(object):
         self.snake = Snake(cyan, [10, 10])
         self.snake.display(self.snakeBoard)
         return self.snake
-    def start(self):
+    def start(self, network = None):
+        self.snakeBoard = np.zeros((numCol + 1, numRow + 1))
+        self.snake = self.initSnake()
         self.generateApple()
         clock = pygame.time.Clock()
         isRun = True
+        if network is None:
+            network = NeuralNetwork()
         while isRun:
-            if self.update() == False:
+            if self.update(network) == False:
                 isRun = False
             if self.isShowed == True:
                 if self.isToggled == False:
@@ -148,18 +149,18 @@ class Controller(object):
                     self.drawBoard(dis)
                     self.drawDisplay(dis)
                     self.isToggled = True
-                self.render(dis)
+                self.render(dis, network)
                 clock.tick(20)
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT:
                         self.snake.isAlive = False
-            if self.snake.stomach <= 450:
-                self.isShowed = True
-        print('You Died!')
-        print('Length: ' + str(len(self.snake.body)) + ' Age: ' + str(self.snake.age) + ' Stomach: ' + str(self.snake.stomach))
+        #print('You Died!')
+        #print('Length: ' + str(len(self.snake.body)) + ' Age: ' + str(self.snake.age) + ' Stomach: ' + str(self.snake.stomach))
+        self.score = self.fitness()
+        return self.fitness()
     def fitness(self):
         return len(self.snake.body)*501 + self.snake.age
-    def update(self):
+    def update(self, network):
         if self.snake.isAlive == False:
             return False
         for i in range(-math.ceil(numColVision / 2), math.ceil(numColVision / 2)):
@@ -172,7 +173,7 @@ class Controller(object):
                     vision[math.floor(numColVision / 2) + i][math.floor(numRowVision / 2) + j] = self.snakeBoard[x][y]
         appleVision = self.getAppleDirection()
         self.snakeVision = np.concatenate((np.delete(vision.reshape(1, vision.size), 24, axis=1), appleVision), axis=1)
-        movement = self.network.filterOutput(self.network.forward(self.snakeVision))
+        movement = network.filterOutput(network.forward(self.snakeVision))
         for i in range(movement.size):
             if int(movement[i]) == 1 and i == 0:
                 self.snake.headDir = 'up'
@@ -294,8 +295,8 @@ class Controller(object):
             pygame.draw.rect(dis, red, [x + 0 * (squareSize + lineWidth) + lineWidth,
                                         y + 0 * (squareSize + lineWidth), squareSize, squareSize])
 
-    def render(self, dis):
-        self.network.render(dis, self.snakeVision, [800, 325])
+    def render(self, dis, network):
+        network.render(dis, self.snakeVision, [800, 325])
         self.displayAppleDirection(self.getAppleDirection(),dis)
         self.displayVision(dis)
         for i in range(numCol):
@@ -334,7 +335,8 @@ windowHeight = 650
 boardWidth = lineWidth*numCol + squareSize*numCol
 windowWidth = 1300
 
-while 1:
-    controller = Controller()
-    #controller.isShowed = True
-    controller.start()
+game = Controller()
+network1 = NeuralNetwork()
+network1.load('E:/Tai_lieu/AIGameProject/AIGameProject/SavedNetwork/gen_1_weights.txt','E:/Tai_lieu/AIGameProject/AIGameProject/SavedNetwork/gen_1_biases.txt')
+game.isShowed = True
+game.start(network = network1)
