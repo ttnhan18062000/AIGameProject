@@ -334,9 +334,3 @@ boardHeight = lineWidth*numRow + squareSize*numRow
 windowHeight = 650
 boardWidth = lineWidth*numCol + squareSize*numCol
 windowWidth = 1300
-
-game = Controller()
-network1 = NeuralNetwork()
-network1.load('E:/Tai_lieu/AIGameProject/AIGameProject/SavedNetwork/gen_1_weights.txt','E:/Tai_lieu/AIGameProject/AIGameProject/SavedNetwork/gen_1_biases.txt')
-game.isShowed = True
-game.start(network = network1)
