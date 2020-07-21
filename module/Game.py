@@ -128,7 +128,9 @@ class Controller(object):
         self.snake.growth(self.snakeBoard)
         self.generateApple()
     def initSnake(self):
-        self.snake = Snake(cyan, [10, 10])
+        x = random.randint(1,numCol-1)
+        y = random.randint(1,numRow-1)
+        self.snake = Snake(cyan, [x, y])
         self.snake.display(self.snakeBoard)
         return self.snake
     def start(self, network = None):
@@ -334,3 +336,10 @@ boardHeight = lineWidth*numRow + squareSize*numRow
 windowHeight = 650
 boardWidth = lineWidth*numCol + squareSize*numCol
 windowWidth = 1300
+
+while 1:
+    game = Controller()
+    network1 = NeuralNetwork()
+    network1.load('E:/Tai_lieu/AIGameProject/AIGameProject/SavedNetwork/gen_6_weights.txt','E:/Tai_lieu/AIGameProject/AIGameProject/SavedNetwork/gen_6_biases.txt')
+    game.isShowed = True
+    game.start(network = network1)
