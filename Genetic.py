@@ -8,7 +8,7 @@ import random
 import numpy as np
 
 class GeneticAlgorithm:
-    def __init__(self, networks=None, networks_shape=None, population_size=1000, generation_number=100,
+    def __init__(self, networks=None, networks_shape=None, population_size=1000, generation_number=1000,
                  crossover_rate=0.3, crossover_method='neuron', mutation_rate=0.7, mutation_method='weight'):
         self.networks_shape = networks_shape
         if self.networks_shape is None:  # if no shape is provided
@@ -247,5 +247,10 @@ class GeneticAlgorithm:
         print("Average top 6 = ", top_mean)
         print("Average last 6 = ", bottom_mean)
 
-gen = GeneticAlgorithm(population_size=100, crossover_method='neuron', mutation_method='weight')
+networks1 = []
+for i in range(2000):
+  network1 = NeuralNetwork()
+  network1.load('/content/AIGameProject/trainedNetwork/gen_62_weights.json','/content/AIGameProject/trainedNetwork/gen_62_biases.json')
+  networks1.append(network1)
+gen = GeneticAlgorithm(population_size=2000, crossover_method='neuron', mutation_method='weight')
 gen.start()

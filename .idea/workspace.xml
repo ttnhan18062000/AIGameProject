@@ -10,6 +10,13 @@
   <component name="FavoritesManager">
     <favorites_list name="AIGameProject" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -22,17 +29,40 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/SavedNetwork" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AIFollowPlayer" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Tai_lieu\AIGameProject\AIGameProject\SavedNetwork" />
+      <recent name="E:\Tai_lieu\AIGameProject\AIGameProject\SavedNetwork_V2" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Tai_lieu\AIGameProject\AIGameProject\module" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Tai_lieu\AIGameProject\AIGameProject\SavedNetwork" />
-    </key>
   </component>
   <component name="RunManager" selected="Python.Game">
+    <configuration name="AutoClick" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AIGameProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AutoClick.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Game" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AIGameProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -46,6 +76,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/Game.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Game_Ver2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AIGameProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/module/Game_Ver2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -78,6 +129,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.Game" />
+        <item itemvalue="Python.Game_Ver2" />
+        <item itemvalue="Python.AutoClick" />
         <item itemvalue="Python.Genetic" />
       </list>
     </recent_temporary>
@@ -100,25 +153,49 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="25" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1595321816362" />
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1595339378366">
+    <state x="463" y="122" key="FileChooserDialogImpl" timestamp="1595468013480">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1595339378366" />
-    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1595339378366">
+    <state x="463" y="122" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1595468013480" />
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1595431109586">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1595339378366" />
-    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1595339378365">
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1595431109586" />
+    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1595431109586">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1595339378365" />
-    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1595339378366">
+    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1595431109586" />
+    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1595431109586">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1595339378366" />
-    <state x="391" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1595338903152">
+    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1595431109586" />
+    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1595431109586">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1595338903152" />
+    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1595431109586" />
+    <state width="1345" height="223" key="GridCell.Tab.1.bottom" timestamp="1595431109580">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1595431109580" />
+    <state width="1345" height="223" key="GridCell.Tab.1.center" timestamp="1595431109580">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1595431109580" />
+    <state width="1345" height="223" key="GridCell.Tab.1.left" timestamp="1595431109580">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1595431109580" />
+    <state width="1345" height="223" key="GridCell.Tab.1.right" timestamp="1595431109580">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1595431109580" />
+    <state x="186" y="9" key="SettingsEditor" timestamp="1595346131109">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="186" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1595346131108" />
+    <state x="391" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1595467642164">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1595467642164" />
   </component>
 </project>

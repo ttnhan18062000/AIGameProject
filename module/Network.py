@@ -66,10 +66,10 @@ class NeuralNetwork:
                     , self.biases)
         """
         dumped = json.dumps(self.weights, cls=NumpyEncoder)
-        with open('E:/Tai_lieu/AIGameProject/AIGameProject/SavedNetwork/' + name + '_weights.txt', 'w') as f:
+        with open('/content/AIGameProject/trainedNetwork/' + name + '_weights.txt', 'w') as f:
             json.dump(dumped, f)
         dumped = json.dumps(self.biases, cls=NumpyEncoder)
-        with open('E:/Tai_lieu/AIGameProject/AIGameProject/SavedNetwork/' + name + '_biases.txt', 'w') as f:
+        with open('/content/AIGameProject/trainedNetwork/' + name + '_biases.txt', 'w') as f:
             json.dump(dumped, f)
         """
         with open('E:/Tai_lieu/AIGameProject/AIGameProject/SavedNetwork/' + name + '_weights.txt','w') as f:

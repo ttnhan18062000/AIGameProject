@@ -1,0 +1,149 @@
+Best Fitness gen 316  :  3118
+Pop size =  1000
+Average top 6 =  2827
+Average last 6 =  1087
+
+Best Fitness gen 317  :  3570
+Pop size =  1000
+Average top 6 =  3102
+Average last 6 =  1085
+
+Best Fitness gen 318  :  3954
+Pop size =  1000
+Average top 6 =  3069
+Average last 6 =  1080
+
+Best Fitness gen 319  :  3142
+Pop size =  1000
+Average top 6 =  3002
+Average last 6 =  1082
+
+Best Fitness gen 320  :  3131
+Pop size =  1000
+Average top 6 =  2867
+Average last 6 =  1083
+
+Best Fitness gen 321  :  3144
+Pop size =  1000
+Average top 6 =  2996
+Average last 6 =  1082
+
+Best Fitness gen 322  :  3140
+Pop size =  1000
+Average top 6 =  2819
+Average last 6 =  1080
+
+Best Fitness gen 323  :  2939
+Pop size =  1000
+Average top 6 =  2858
+Average last 6 =  1083
+
+Best Fitness gen 324  :  3159
+Pop size =  1000
+Average top 6 =  2835
+Average last 6 =  1076
+
+Best Fitness gen 325  :  3141
+Pop size =  1000
+Average top 6 =  2962
+Average last 6 =  1082
+
+Best Fitness gen 326  :  2922
+Pop size =  1000
+Average top 6 =  2779
+Average last 6 =  1079
+
+Best Fitness gen 327  :  2933
+Pop size =  1000
+Average top 6 =  2824
+Average last 6 =  1082
+
+Best Fitness gen 328  :  3135
+Pop size =  1000
+Average top 6 =  2830
+Average last 6 =  1084
+
+Best Fitness gen 329  :  3117
+Pop size =  1000
+Average top 6 =  2894
+Average last 6 =  1077
+
+Best Fitness gen 330  :  3545
+Pop size =  1000
+Average top 6 =  3004
+Average last 6 =  1081
+
+Best Fitness gen 331  :  3570
+Pop size =  1000
+Average top 6 =  2868
+Average last 6 =  1081
+
+Best Fitness gen 332  :  3541
+Pop size =  1000
+Average top 6 =  2830
+Average last 6 =  1082
+
+Best Fitness gen 333  :  3735
+Pop size =  1000
+Average top 6 =  2893
+Average last 6 =  1082
+
+Best Fitness gen 334  :  3311
+Pop size =  1000
+Average top 6 =  2750
+Average last 6 =  1080
+
+Best Fitness gen 335  :  4144
+Pop size =  1000
+Average top 6 =  3066
+Average last 6 =  1081
+
+Best Fitness gen 336  :  3336
+Pop size =  1000
+Average top 6 =  2934
+Average last 6 =  1079
+
+Best Fitness gen 337  :  3363
+Pop size =  1000
+Average top 6 =  2965
+Average last 6 =  1079
+
+Best Fitness gen 338  :  3119
+Pop size =  1000
+Average top 6 =  2920
+Average last 6 =  1081
+
+Best Fitness gen 339  :  3128
+Pop size =  1000
+Average top 6 =  2863
+Average last 6 =  1081
+
+Best Fitness gen 340  :  3137
+Pop size =  1000
+Average top 6 =  2797
+Average last 6 =  1078
+
+Best Fitness gen 341  :  3138
+Pop size =  1000
+Average top 6 =  3000
+Average last 6 =  1079
+
+Best Fitness gen 342  :  2937
+Pop size =  1000
+Average top 6 =  2829
+Average last 6 =  1083
+
+Best Fitness gen 343  :  3532
+Pop size =  1000
+Average top 6 =  2855
+Average last 6 =  1078
+
+Best Fitness gen 344  :  3332
+Pop size =  1000
+Average top 6 =  3065
+Average last 6 =  1080
+
+Best Fitness gen 345  :  3089
+Pop size =  1000
+Average top 6 =  2854
+Average last 6 =  1082

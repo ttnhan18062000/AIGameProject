@@ -55,7 +55,7 @@ class Snake(object):
         self.body = []
         self.body.append(body)
         self.age = 0
-        self.stomach = 100
+        self.stomach = 40
         self.isAlive = True
         self.headDir = ''
     def display(self, snakeBoard):
@@ -82,7 +82,7 @@ class Snake(object):
             self.body[i].lastDir = self.body[i-1].dir
 
     def growth(self, snakeBoard):
-        self.stomach = 100
+        self.stomach += 40*(len(self.body))
         tailDir = self.body[len(self.body)-1].lastDir
         newPos = [self.body[len(self.body)-1].pos[0],self.body[len(self.body)-1].pos[1]]
         if tailDir == 'up':
@@ -336,10 +336,3 @@ boardHeight = lineWidth*numRow + squareSize*numRow
 windowHeight = 650
 boardWidth = lineWidth*numCol + squareSize*numCol
 windowWidth = 1300
-
-while 1:
-    game = Controller()
-    network1 = NeuralNetwork()
-    network1.load('E:/Tai_lieu/AIGameProject/AIGameProject/SavedNetwork/gen_26_weights.txt','E:/Tai_lieu/AIGameProject/AIGameProject/SavedNetwork/gen_26_biases.txt')
-    game.isShowed = True
-    game.start(network = network1)
